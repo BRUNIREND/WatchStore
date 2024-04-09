@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="../../static/main/img/favicon.ico" sizes="any">
+  <link rel="icon" href="../../static/main/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../static/main/img/icon.png">
+  <link rel="manifest" href="ITACedemy/site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <div class ="form">
+    <h1>Подписка на ресурс</h1>
+    <form action="">
+      <div class="input-container">
+        <h2>Имя</h2>
+        <label for="username"></label><input type="text" id="username" name="username" required placeholder="Имя пользователя"/>
+        </div>
+      <div class="input-container">
+        <h2>Email</h2>
+        <label>
+          <input type ="email" name="email" required placeholder="Электронная почта"/>
+        </label>
+      </div>
+
+      <div class="input-container">
+        <h2>Возраст</h2>
+        <label>
+          <input type ="number" name="age" required placeholder="Возраст"/>
+        </label>
+      </div>
+       <div class="input-container">
+        <h2>Пол</h2>
+         <label for="gender"></label><select id="gender" name="gender">
+      <option>Мужской</option>
+        <option>Женский</option>
+      </select>
+        </div>
+
+      <div class="input-container-ras">
+
+        <label>
+          <input type ="checkbox" name="podpiska" required placeholder="Возраст" style="margin-left: 10px"/>
+        </label>
+        <h2 style="margin-left: 10px; white-space: nowrap">Подписка на рассылку</h2>
+        </div>
+
+      <div class="input-container-interests">
+        <h2>Интересы</h2>
+        <div style="display: inline-table">
+
+        <label>Программирование<input type="checkbox" id="prog" name="confirm password" required placeholder="Пароль"/></label>
+          <label>Дизайн<input type="checkbox" id="diz" name="confirm password" required placeholder="Пароль"/></label>
+          <label>Музыка<input type="checkbox" id="music" name="confirm password" required placeholder="Пароль"/></label>
+        </div>
+      </div>
+      <button type="submit">Зарегистрироваться</button>
+
+    </form>
+  </div>
+
+</body>
+
+</html>
