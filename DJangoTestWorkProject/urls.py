@@ -25,7 +25,8 @@ urlpatterns = [
     path('', include('main.urls')),
     # path('product/<id>', ProductViews.pageOne),
     # re_path(r'(\d+)\/$', ProductViews.pageOne),
-    re_path(r'product/?id=(?P<id>\d+)\/$', ProductViews.pageOne),
-    path('news', include('news.urls')),
+    # re_path(r'product/?id=(?P<id>\d+)\/$', ProductViews.pageOne),
+    path('news/', include('news.urls')),
+    path('registration/', include('registration.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
