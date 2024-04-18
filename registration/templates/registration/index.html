@@ -88,26 +88,37 @@
 
 </header>
 
+
+
+{#<div class="features">#}
+{#        <h1>Регистрация </h1>#}
+{#        <form method="post">#}
+{#            {% csrf_token %}#}
+{#            {{ form.name}}<br>#}
+{#            {{ form.surname }}<br>#}
+{#            {{ form.email }}<br>#}
+{#            {{ form.password }}<br>#}
+{#            {{ form.password_check }}<br>#}
+{#            <span>{{ error }}</span>#}
+{#            <button class="btn btn-success" type="submit">Добавить статью</button>#}
+{##}
+{#        </form>#}
+{#    </div>#}
 <main style="align-items: center">
     <div class="container col-sm-12 col-lg-9 col-xl-7 col-xxl-6 divReg">
-    <form class="col-12 w-auto registerForm" style="margin-right: 1%">
+    <form class="col-12 w-auto registerForm" style="margin-right: 1%" method="post">
+        {% csrf_token %}
+    {% block content  %}
     <h1 class="position-relative" style="padding-bottom: 5%">Добро пожаловать!</h1>
+        <div class = 'features'>
+            {{ form.name}}<br>
+            {{ form.surname}}<br>
+            {{ form.email }}<br>
+            {{ form.password }}<br>
+            {{ form.password_check }}<br>
+        </div>
+    {% endblock %}
 
-        <div class="mb-4 ">
-            <input type="text" class="w-100" placeholder="Имя">
-                </div>
-        <div class="mb-4">
-            <input type="text" class="w-100" placeholder="Фамилия">
-                 </div>
-        <div class="mb-4">
-            <input type="text" class="w-100" placeholder="Электронная почта">
-                 </div>
-        <div class="mb-4">
-            <input type="text" class="w-100" placeholder="Пароль">
-                 </div>
-        <div class="mb-4">
-            <input type="text" class="w-100" placeholder="Повторите пароль">
-                 </div>
         <div class="container" style="text-align: center; display: grid">
             <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
              border: none">
@@ -116,12 +127,11 @@
             <label>Уже зарегистрированы?</label>
             <a class="bg-light" href="{% url 'sign_in' %}">Войти</a>
         </div>
-
         </form>
-       <div class="col-lg-1  col-md-6 MDLGimg" style="margin: 0 0 5% 5%; background-position: center; width: 429px; height: 500px; background-image: url('main/static/Images/ImageBackGround2 (1).jpg')">
+        <div class="col-lg-1  col-md-6 MDLGimg" style="margin: 0 0 5% 5%; background-position: center; width: 429px; height: 500px; background-image: url('main/static/Images/ImageBackGround2 (1).jpg')">
         </div>
 
-        </div>
+    </div>
 
 
 </main>

@@ -25,5 +25,4 @@ class ArticlesForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Текст статьи'
             }),
-
         }

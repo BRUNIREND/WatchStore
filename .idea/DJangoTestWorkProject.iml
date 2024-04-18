@@ -29,7 +29,8 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/../DJangoTestWorkProject\templates" />
+        <option value="$MODULE_DIR$/registration/templates" />
+        <option value="$MODULE_DIR$/news/templates" />
       </list>
     </option>
   </component>
