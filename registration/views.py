@@ -4,12 +4,27 @@ from .forms import RegistrationForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
-# Create your views here.
 def sign_up(request):
-    return render(request, 'registration/index.html')
+    return render(request, 'registration/sign_up.html')
+
 
 def sign_in(request):
-    return render(request, 'registration/sign_in.html')
+    error = ''
+    users = RegisteredUsers.objects.all()
+    if request.method == 'POST':
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        for el in users:
+            if el.email == email and el.password == password:
+                return redirect('home')
+        else:
+            error = 'Оей, что то не так'
+    form = RegistrationForm()
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'registration/sign_in.html', data)
 
 def create(request):
     error = ''
@@ -28,4 +43,4 @@ def create(request):
         'error': error
     }
 
-    return render(request, 'registration/index.html', data)
+    return render(request, 'registration/sign_up.html', data)
