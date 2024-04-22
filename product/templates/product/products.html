@@ -1,0 +1,147 @@
+{% extends 'registration/layout.html' %}
+{% load static %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+
+    <div ></div>
+
+    <div class="container">
+        <section class="categories row">
+            <div class="menu col-3 align-items-center" style="text-align: center">
+                <h3 class="d-flex align-items-center">Фильтры</h3>
+
+              <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Наличие в магазинах
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                      <div class="accordion-body">
+                          <input type="checkbox">
+                          <label>Да</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Пол
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
+                      <div class="accordion-body d-block">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Мужской</label>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Женский</label>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label class="col-md-2">Унисекс</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Бренд
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" >
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Тип механизма
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Диаметр корпуса
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Цвет корпуса
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Стиль
+                      </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Цена
+                      </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <label>smthg here</label>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+
+                <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
+                 border: none"> Применить
+                </button>
+                <button type="reset" class="col-12" style="border: none">
+                    <u>Сбросить</u>
+                </button>
+
+            </div>
+
+
+            <div class="items col-9 row justify-content-between">
+
+                {% for i in range%}
+                    {% include 'product/card.html' %}
+
+                {% endfor %}
+
+
+            </div>
+        </section>
+
+    </div>
+{% endblock %}
