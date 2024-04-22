@@ -1,5 +1,5 @@
 {% extends 'registration/layout.html' %}
-
+{% load static %}
 {% block title %}Вход{% endblock %}
 {% block content %}
     <div class="container col-sm-12 col-md-12 col-lg-6 divReg">
@@ -16,7 +16,9 @@
             </div>
 
         </form>
-       <div class="col-md-6 MDLGimg" style="padding-left:10%; margin: 0 0 5% 5%; background-position: center; width: 429px; height: 480px; background-image: url('main/static/img/watchIMG.jpg')">
+       <div class="col-md-6 MDLGimg" style="padding-left:10%; margin: 0 0 5% 5%;
+        background-position: center; width: 429px; height: 480px; 
+        background-image: url('{% static 'registration/img/watchIMG.jpg' %}')">
         </div>
     </div>
 {% endblock %}

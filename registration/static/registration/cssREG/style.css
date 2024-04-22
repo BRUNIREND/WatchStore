@@ -1,0 +1,56 @@
+layout.css.headerImg{
+    margin-left: 1%;
+}
+
+header a:hover{
+    background: silver;
+
+}
+.divReg{
+    display: flex;
+}
+input[type=text] {
+    margin-bottom: 2%;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    border-bottom: 1px solid gray;
+}
+input[type=text]:focus-within{
+    background-color: #9ec5fe;
+    opacity: 66%;
+    border-radius: 2px;
+    border-bottom: 1px solid gray;
+}
+.categories .menu h3{
+
+        border-radius: 5px 5px 0px 0px;
+        height: 50px;
+    }
+.categories .menu ul li{
+    margin-bottom: 15px;
+
+}
+.categories .menu ul li:hover{
+    font-weight: 600;
+}
+.categories .menu ul li a{
+    color: black;
+    align-items: center;
+    text-decoration: none;
+}
+.menu .accordion{
+    text-align: left;
+}
+.card-btn{
+    border-radius: 0;
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+.card{
+    margin-bottom: 5%;
+}
+.card:hover{
+    box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
+}
