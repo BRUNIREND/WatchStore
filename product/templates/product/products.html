@@ -1,6 +1,6 @@
-{% extends 'registration/layout.html' %}
+{% extends 'product/layout.html' %}
 {% load static %}
-{% block title %}Вход{% endblock %}
+{% block title %}Продукты{% endblock %}
 {% block content %}
 
     <div ></div>
@@ -80,7 +80,10 @@
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
                       <div class="accordion-body">
-                          <label>smthg here</label>
+                          <label>От</label>
+                          <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>- До</label>
+                          <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
                       </div>
                     </div>
                   </div>
@@ -128,7 +131,7 @@
                       <div class="accordion-body">
                           <label>От</label>
                           <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label>До</label>
+                          <label>- До</label>
                           <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
 
                       </div>
