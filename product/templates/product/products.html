@@ -7,7 +7,7 @@
 
     <div class="container">
         <section class="categories row">
-            <div class="menu col-3 align-items-center" style="text-align: center">
+            <div class="menu filter col-3 align-items-center" style="text-align: center">
                 <h3 class="d-flex align-items-center">Фильтры</h3>
 
               <div class="accordion" id="accordionExample">
@@ -33,11 +33,11 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                       <div class="accordion-body d-block">
                           <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label>Мужской</label>
+                          <label>Мужской</label><br>
                           <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label>Женский</label>
+                          <label>Женский</label><br>
                           <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label class="col-md-2">Унисекс</label>
+                          <label class="col-md-2">Унисекс</label><br>
                       </div>
                     </div>
                   </div>
@@ -61,10 +61,14 @@
                         Тип механизма
                       </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
                       <div class="accordion-body">
-                          <label>smthg here</label>
-                      </div>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Механические</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Кварцевые</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Электронные</label><br>   </div>
                     </div>
                   </div>
 
@@ -74,7 +78,7 @@
                         Диаметр корпуса
                       </button>
                     </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
                       <div class="accordion-body">
                           <label>smthg here</label>
                       </div>
@@ -87,10 +91,14 @@
                         Цвет корпуса
                       </button>
                     </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
                       <div class="accordion-body">
-                          <label>smthg here</label>
-                      </div>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Серебристый</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Золотой</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Черный</label><br>                     </div>
                     </div>
                   </div>
 
@@ -100,9 +108,12 @@
                         Стиль
                       </button>
                     </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven">
                       <div class="accordion-body">
-                          <label>smthg here</label>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Спортивные</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>Классические</label><br>
                       </div>
                     </div>
                   </div>
@@ -113,17 +124,20 @@
                         Цена
                       </button>
                     </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight">
                       <div class="accordion-body">
-                          <label>smthg here</label>
+                          <label>От</label>
+                          <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <label>До</label>
+                          <input type="number" style="max-width: 100px" class="col-md-4 col-lg-4 col-xxl-12">
+
                       </div>
                     </div>
                   </div>
 
               </div>
 
-                <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
-                 border: none"> Применить
+                <button type="submit" class="btn btn-primary submit" style=""> Применить
                 </button>
                 <button type="reset" class="col-12" style="border: none">
                     <u>Сбросить</u>
