@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 
 layout.css.headerImg{
     margin-left: 1%;
@@ -6,10 +9,30 @@ layout.css.headerImg{
 .cardimg{
     min-height:10%;
 }
+
 .cart-btn{
     background-color: gray;
     width: 100%;
+}
 
+.footer{
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
+    margin-top: 5%;
+    padding: 0 5% 0 5%;
+
+}
+
+.container ul li{
+    font-size: x-large;
+    font-family: Montserrat;
+
+}
+
+
+.container ul li button{
+    color: black;
 }
 
 
@@ -22,6 +45,14 @@ layout.css.headerImg{
 
 header a:hover{
     background: silver;
+
+}
+.characteristics ul .nav-link:focus{
+    border-radius: 5px;
+    border: solid 1px;
+    border-color: black;
+    color:black;
+
 
 }
 

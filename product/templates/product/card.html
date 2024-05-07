@@ -1,11 +1,11 @@
 {% load static %}
-<div class="card" style="width: 18rem; min-height: 24rem;">
-    <div class="cardimg">
-        <img style="object-fit: cover; margin-bottom: 15%; margin-top: 5%; min-height: 50%" src="{% static 'product/img/ImageBackGround.jpg' %}" class="card-img-top cardimGG" alt="...">
-        </div>
-        <div class="card-body text-center">
+<div class="card col-12" style="width: 19rem; min-height: 30rem; padding:0" onclick="window.location.href = `{% url 'sproduct' %}`">
+    <div class="cardimg" style="margin-bottom: 2%; min-height: 70%">
+        <img style="object-fit: cover; min-height: 100%" src="{% static 'product/img/ImageBackGround.jpg' %}" class="card-img-top cardimGG" alt="...">
+    </div>
+    <div class="card-body text-center">
         <h5 class="card-title">80000</h5>
         <p class="card-text">Hamilton</p>
-        <a href="#" class="btn btn-primary card-btn ">Перейти куда-нибудь</a>
+        <a href="#" class="btn btn-primary card-btn ">В корзину</a>
     </div>
 </div>
