@@ -54,16 +54,16 @@ input[type=text]:focus-within{
 .card:hover{
     box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
 }
-.coder{
+.headerImg.coder{
     display:flex;
 }
-.coder li{
+.headerImg.coder li{
     width:200px;
     list-style: none;
     background: gray;
     position: relative;
 }
-.coder a{
+.headerImg.coder a{
     color:aliceblue;
     text-decoration: none;
     text-align: center;
@@ -72,21 +72,24 @@ input[type=text]:focus-within{
     line-height: 40px;
     transition: all .5s;
 }
-.coder a:hover{
+.headerImg.coder a:hover{
     background: gray;
 }
-.coder ul{
+.headerImg.coder ul{
     position:absolute;
     left:0;
     top:100%;
     display:none;
     padding:0;
 }
-.coder li:hover > ul{
+.headerImg.coder li:hover > ul{
     display:block;
 }
-.coder ul ul{
+.headerImg.coder ul ul{
     display:none;
     top:0;
     left:100%;
+}
+.headerImg:hover{
+    background-color: black;
 }
