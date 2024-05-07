@@ -46,6 +46,8 @@ def write_json(data, file_name):
 
         json.dump(data, f, indent=4, ensure_ascii=False)
 
+
+# Пол, Бренд, Страна, Тип механизма, корпус,
 def second_pars(datas):
     for url in datas['url_path']:
         req = requests.get(url, headers={'User-Agent': user_agent}).content
@@ -90,9 +92,9 @@ if __name__ == "__main__":
             "Артикул": [],
             "Пол": [],
             "Бренд": [],
-            # "Страна": [],
-            # "Водостойкость": [],
-            # "Тип механизма": [],
+            "Страна": [],
+            "Водостойкость": [],
+            "Тип механизма": [],
             # "Модель механизма": [],
             # "Камней в механизме": [],
             # "Материал корпуса": [],
