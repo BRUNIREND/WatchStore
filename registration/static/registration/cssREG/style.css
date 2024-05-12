@@ -52,44 +52,62 @@ input[type=text]:focus-within{
     margin-bottom: 5%;
 }
 .card:hover{
-    box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
+    box-shadow: 0 15px 30px -15px rgb(253, 253, 253);
 }
-.headerImg.coder{
-    display:flex;
+ul#coder{
+    display:grid;
 }
-.headerImg.coder li{
-    width:200px;
+ul#coder li{
+
+    width:100px;
     list-style: none;
-    background: gray;
     position: relative;
+    text-align: center;
+
 }
-.headerImg.coder a{
-    color:aliceblue;
+ul#coder .aaa:hover{
+    padding-top: 10px;
+    background: black;
+    transition: all .5s;
+    color: white;
+
+}
+ul#coder .aaa{
+    background: #FDFDFDFF;
+    box-shadow: -5px 3px 10px grey;
+}
+ul#coder a:hover{
+    background-color: black;
+
+    color: white;
+}
+ul#coder ul a{
+    color:black;
     text-decoration: none;
     text-align: center;
-    display: block;
-    height:40px;
+    height: 40px;
+    width:100px;
     line-height: 40px;
-    transition: all .5s;
+    transition: all .4s;
 }
-.headerImg.coder a:hover{
-    background: gray;
-}
-.headerImg.coder ul{
+
+
+ul#coder ul{
     position:absolute;
     left:0;
     top:100%;
     display:none;
     padding:0;
 }
-.headerImg.coder li:hover > ul{
+ul#coder li:hover > ul{
     display:block;
+    background-color: black;
 }
-.headerImg.coder ul ul{
+ul#coder ul ul{
     display:none;
     top:0;
     left:100%;
 }
-.headerImg:hover{
-    background-color: black;
-}
+/*ul#coder:hover{*/
+/*    background-color: black;*/
+/*}*/
