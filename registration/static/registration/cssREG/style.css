@@ -1,5 +1,5 @@
 layout.css.headerImg{
-    margin-left: 1%;
+    margin-left: 3%;
 }
 
 header a:hover{
@@ -52,5 +52,62 @@ input[type=text]:focus-within{
     margin-bottom: 5%;
 }
 .card:hover{
-    box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
+    box-shadow: 0 15px 30px -15px rgb(253, 253, 253);
 }
+ul#coder{
+    display:grid;
+}
+ul#coder li{
+
+    width:100px;
+    list-style: none;
+    position: relative;
+    text-align: center;
+
+}
+ul#coder .aaa:hover{
+    padding-top: 10px;
+    background: black;
+    transition: all .5s;
+    color: white;
+
+}
+ul#coder .aaa{
+    background: #FDFDFDFF;
+    box-shadow: -5px 3px 10px grey;
+}
+ul#coder a:hover{
+    background-color: black;
+
+    color: white;
+}
+ul#coder ul a{
+    color:black;
+    text-decoration: none;
+    text-align: center;
+    height: 40px;
+    width:100px;
+    line-height: 40px;
+    transition: all .4s;
+}
+
+
+ul#coder ul{
+    position:absolute;
+    left:0;
+    top:100%;
+    display:none;
+    padding:0;
+}
+ul#coder li:hover > ul{
+    display:block;
+    background-color: black;
+}
+ul#coder ul ul{
+    display:none;
+    top:0;
+    left:100%;
+}
+/*ul#coder:hover{*/
+/*    background-color: black;*/
+/*}*/
