@@ -26,7 +26,7 @@ layout.css.headerImg{
 
 .container ul li{
     font-size: x-large;
-    font-family: Montserrat;
+    font-family: Montserrat; !important;
 
 }
 
@@ -76,17 +76,17 @@ input[type=text]:focus-within{
     border-bottom: 1px solid gray;
 }
 .categories .menu h3{
-
         border-radius: 5px 5px 0px 0px;
         height: 50px;
     }
 .categories .menu ul li{
     margin-bottom: 15px;
-
 }
+
 .categories .menu ul li:hover{
     font-weight: 600;
 }
+
 .categories .menu ul li a{
     color: black;
     align-items: center;
@@ -106,4 +106,14 @@ input[type=text]:focus-within{
 }
 .card:hover{
     box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
+    transition: all .5s;
+}
+
+.cart-btn:hover{
+    background-color: black;
+    color: white; !important;
+    font-size:26px;
+}
+.cart-btn p:hover{
+    color:white;
 }
