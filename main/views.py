@@ -4,7 +4,7 @@ def index(request):
     data = {
         'title': 'Watch Store',
     }
-    return render(request, 'main/index.html', data)
+    return render(request, 'main/home_page.html', data)
 
 def about(request):
     return render(request, 'main/about.html')

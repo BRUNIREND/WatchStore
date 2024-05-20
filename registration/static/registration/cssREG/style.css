@@ -1,5 +1,6 @@
-layout.css.headerImg{
-    margin-left: 3%;
+.headerImg{
+    margin-left: 2%;
+
 }
 
 header a:hover{
@@ -56,9 +57,12 @@ input[type=text]:focus-within{
 }
 ul#coder{
     display:grid;
+    margin: 0;
+    padding: 0;
 }
 ul#coder li{
-
+    margin: 0;
+    padding: 0;
     width:100px;
     list-style: none;
     position: relative;
