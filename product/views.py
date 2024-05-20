@@ -1,7 +1,38 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-def products(request):
-    return render(request, 'product/products.html', {'range': range(10)})
+from .forms import ProductForm
+from .models import Products
 
-def sproduct(request):
-    return render(request, 'product/singleproduct.html')
+def catalog(request):
+    goods = Products.objects.all()
+
+    context = {
+        "title": "Home - Каталог",
+        "goods": goods,
+    }
+    return render(request, "product/products.html", context=context)
+
+
+# def create(request):
+#     error = ''
+#     if request.method == 'POST':
+#         form = ProductForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('home')
+#         else:
+#             error = 'Форма была неверной'
+#
+#     form = ProductForm()
+#
+#     data = {
+#         'form': form,
+#         'error': error
+#     }
+#     return render(request, 'product/adminka_create.html', data)
+
+# def products(request):
+#     context = {
+#         "element": [1] * 9
+#     }
+#     return render(request, "product/products.html", context=context)
