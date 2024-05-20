@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-layout.css.headerImg{
-    margin-left: 1%;
-}
-
 .cardimg{
     min-height:10%;
 }
@@ -21,20 +15,16 @@ layout.css.headerImg{
     box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
     margin-top: 5%;
     padding: 0 5% 0 5%;
-
 }
 
 .container ul li{
     font-size: x-large;
     font-family: Montserrat; !important;
-
 }
-
 
 .container ul li button{
     color: black;
 }
-
 
 .submit{
     margin: 7% 7%;
@@ -52,13 +42,12 @@ header a:hover{
     border: solid 1px;
     border-color: black;
     color:black;
-
-
 }
 
 .divReg{
     display: flex;
 }
+
 input[type=text] {
     margin-bottom: 2%;
     border: none;
@@ -66,16 +55,19 @@ input[type=text] {
     border-radius: 2px;
     border-bottom: 1px solid gray;
 }
+
 input[type=text]:focus-within{
     background-color: #9ec5fe;
     opacity: 66%;
     border-radius: 2px;
     border-bottom: 1px solid gray;
 }
+
 .categories .menu h3{
-        border-radius: 5px 5px 0px 0px;
-        height: 50px;
-    }
+    border-radius: 5px 5px 0px 0px;
+    height: 50px;
+}
+
 .categories .menu ul li{
     margin-bottom: 15px;
 }
@@ -89,18 +81,22 @@ input[type=text]:focus-within{
     align-items: center;
     text-decoration: none;
 }
+
 .menu .accordion{
     text-align: left;
 }
+
 .card-btn{
     border-radius: 0;
     border-color: black;
     color: black;
     background-color: white;
 }
+
 .card{
     margin-bottom: 5%;
 }
+
 .card:hover{
     box-shadow: 0 15px 30px -15px rgba(0,0,0,0.75);
     transition: all .5s;
@@ -111,6 +107,7 @@ input[type=text]:focus-within{
     color: white; !important;
     font-size:26px;
 }
+
 .cart-btn p:hover{
     color:white;
 }
@@ -118,6 +115,7 @@ input[type=text]:focus-within{
 ul#coder{
     display:grid; !important;
 }
+
 ul#coder li{
     width:100px; !important;
     list-style: none; !important;
@@ -125,22 +123,26 @@ ul#coder li{
     text-align: center; !important;
 
 }
+
 ul#coder .aaa:hover{
     background: black; !important;
     transition: all .5s; !important;
     color: white; !important;
 
 }
+
 ul#coder .aaa{
     background: #FDFDFDFF; !important;
     box-shadow: -5px 3px 10px grey; !important;
 }
+
 ul#coder a:hover{
     background-color: black; !important;
     color: white; !important;
     width: 100%; !important;
     height: 100%; !important;
 }
+
 ul#coder ul a{
     color:black; !important;
     text-decoration: none; !important;
@@ -158,6 +160,7 @@ ul#coder ul{
     display:none; !important;
     padding:0; !important;
 }
+
 ul#coder li:hover > ul{
     display:block; !important;
     background-color: black; !important;

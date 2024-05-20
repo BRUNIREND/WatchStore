@@ -15,3 +15,6 @@ def contact(request):
     }
     return render(request, 'main/contact.html', data)
 
+def profile(request):
+    return render(request, 'main/profile.html')
+
