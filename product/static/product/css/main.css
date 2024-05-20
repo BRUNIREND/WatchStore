@@ -12,10 +12,12 @@ aside{
     border-right: 5px solid #4d4d4d;
 }
 
-aside img{
+aside img {
     width: 100px;
     float: left;
+
 }
+
 aside .logo {
     font-size: 40px;
     margin-left:10px;
