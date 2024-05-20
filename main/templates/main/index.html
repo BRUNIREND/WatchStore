@@ -6,13 +6,17 @@
 {% endblock %}
 
 {% block content %}
-    <div class="card text-bg-dark">
-            <img class="card-img" style="object-fit: cover; min-height: 100%" src="{% static 'Images/ImageBackGround.jpg' %}"  alt="...">
-            <div class="card-img-overlay">
-                <h1 class="card-title">{{ title }}</h1>
-                <p class="card-text">lorem ipsum Lorem ipsum dolor sit amet, consectetur radicalising elit. Aspernatur assumenda autem distinctio error ex harum iste laboriosam neque tempora voluptatum! A aliquid beatae consectetur itaque similique! Commodi inventore recusandae reiciendis?</p>
-            </div>
-    </div>
+    <main style="min-height: 900px; margin-top: 0; padding-top: 0; background-position: bottom; background-image: url('{% static 'product/img/ImageBackGround.jpg' %}')">
+        <div style="padding-top: 8%" class="col-lg-9 container">
+            <h2 class="text-white" style="margin-bottom: 5%; font-size: xxx-large">Watch Store</h2>
+            <p style="margin-bottom: 5%" class="text-white col-lg-5">Мир меняется быстро, красота радует долго, впечатления производятся навсегда.</p>
+
+            <button type="submit" class="p-2 btn btn-primary w-25" style=" background: silver; color:black;
+                 border: none"><b>Купить</b></button>
+
+        </div>
+
+    </main>
 {% endblock %}
 {#{% extends 'main/layout.html' %}#}
 {##}
