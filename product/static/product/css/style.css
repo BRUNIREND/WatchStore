@@ -56,9 +56,6 @@ header a:hover{
 
 }
 
-.headerImg{
-    padding-left: 2%;
-}
 .divReg{
     display: flex;
 }
@@ -116,4 +113,62 @@ input[type=text]:focus-within{
 }
 .cart-btn p:hover{
     color:white;
+}
+
+ul#coder{
+    display:grid; !important;
+}
+ul#coder li{
+    width:100px; !important;
+    list-style: none; !important;
+    position: relative; !important;
+    text-align: center; !important;
+
+}
+ul#coder .aaa:hover{
+    background: black; !important;
+    transition: all .5s; !important;
+    color: white; !important;
+
+}
+ul#coder .aaa{
+    background: #FDFDFDFF; !important;
+    box-shadow: -5px 3px 10px grey; !important;
+}
+ul#coder a:hover{
+    background-color: black; !important;
+    color: white; !important;
+    width: 100%; !important;
+    height: 100%; !important;
+}
+ul#coder ul a{
+    color:black; !important;
+    text-decoration: none; !important;
+    text-align: center; !important;
+    width: 100%; !important;
+    height: 100%; !important;
+    line-height: 40px; !important;
+    transition: all .4s; !important;
+}
+
+ul#coder ul{
+    position:absolute; !important;
+    left:0; !important;
+    top:100%; !important;
+    display:none; !important;
+    padding:0; !important;
+}
+ul#coder li:hover > ul{
+    display:block; !important;
+    background-color: black; !important;
+}
+
+ul#coder .aaa:hover a{
+    color: white; !important;
+}
+
+ul#coder ul ul{
+    display:none; !important;
+    top:0; !important;
+    left:100%; !important;
 }

@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container ul li{
+    font-size: x-large;
+    font-family: Montserrat; !important;
+
+}
+
 layout.css.headerImg{
     margin-left: 3%;
 }
@@ -66,7 +74,7 @@ ul#coder li{
 
 }
 ul#coder .aaa:hover{
-    padding-top: 10px;
+    width: 120%;
     background: black;
     transition: all .5s;
     color: white;
@@ -78,7 +86,6 @@ ul#coder .aaa{
 }
 ul#coder a:hover{
     background-color: black;
-
     color: white;
 }
 ul#coder ul a{
@@ -103,6 +110,11 @@ ul#coder li:hover > ul{
     display:block;
     background-color: black;
 }
+
+ul#coder .aaa:hover a{
+    color: white; !important;
+}
+
 ul#coder ul ul{
     display:none;
     top:0;
