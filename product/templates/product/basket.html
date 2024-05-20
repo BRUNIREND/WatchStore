@@ -1,0 +1,21 @@
+{% extends 'product/layout.html' %}
+{% load static %}
+{% block title %}Корзина{% endblock %}
+{% block content %}
+    <div class="row">
+        <h2 class="" style="margin-left: 10%">Корзина</h2>
+        <div class="card col-4" style="margin-left: 10%">
+        <img class="col-3" src="{% static 'product/img/ImageBackGround.jpg' %}" alt="...">
+        </div>
+
+        <div class="card col-3" id='test1'style="margin-left: 5%">
+            <h4 class="basket">Итого</h4>
+            <h4 class="basket">стоимость Р</h4>
+            <h5 class="basket">Товаров:</h5>
+            <h4 class="basket">стоимость Р</h4>
+            <h5 class="basket">Доставка:</h5>
+            <h4 class="basket">Бесплатно</h4>
+            <button class="btn btn-dark w-50 align-self-center">Оформить заказ</button>
+        </div>
+    </div>
+{% endblock %}
