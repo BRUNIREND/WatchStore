@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput,IntegerField, URLField, CharField,
 class ProductForm(ModelForm):
     class Meta:
         model = Products
-        fields = {'name', 'cost', 'url_path', 'url_img', 'article', 'gender', 'country', 'waterproof', 'type_mechanism'}
+        fields = {'name', 'cost', 'slug', 'discount', 'quantity', 'image', 'category', 'url_path', 'url_img', 'article', 'gender', 'country', 'waterproof', 'type_mechanism'}
 
         widgets = {
             'name': TextInput(attrs={
