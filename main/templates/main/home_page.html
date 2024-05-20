@@ -1,0 +1,20 @@
+{% extends 'main/layout_classic.html' %}
+{%load static%}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <main style="min-height: 900px; margin-top: 0; padding-top: 0; background-position: bottom; background-image: url('{% static 'product/img/ImageBackGround.jpg' %}')">
+        <div style="padding-top: 8%" class="col-lg-9 container">
+            <h2 class="text-white" style="margin-bottom: 5%; font-size: xxx-large">Watch Store</h2>
+            <p style="margin-bottom: 5%" class="text-white col-lg-5">Мир меняется быстро, красота радует долго, впечатления производятся навсегда.</p>
+
+            <button type="submit" class="p-2 btn btn-primary w-25" style=" background: silver; color:black;
+                 border: none"><b>Купить</b></button>
+
+        </div>
+
+    </main>
+{% endblock %}
+
