@@ -13,23 +13,24 @@ def catalog(request):
     return render(request, "product/products.html", context=context)
 
 
-# def create(request):
-#     error = ''
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('home')
-#         else:
-#             error = 'Форма была неверной'
-#
-#     form = ProductForm()
-#
-#     data = {
-#         'form': form,
-#         'error': error
-#     }
-#     return render(request, 'product/adminka_create.html', data)
+
+def create(request):
+    error = ''
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            error = 'Форма была неверной'
+
+    form = ProductForm()
+
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'product/adminka_create.html', data)
 
 # def products(request):
 #     context = {
