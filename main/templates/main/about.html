@@ -1,13 +1,28 @@
 {% extends 'main/layout.html' %}
-
+{%load static%}
 {% block title %}
     Про нас
 {% endblock %}
 
 {% block content %}
-   <div class="features">
-        <h1>Про нас</h1>
-        <p>lorem ipsum Lorem ipsum dolor sit amet, consectetur radicalising elit. Aspernatur assumenda autem distinctio error ex harum iste laboriosam neque tempora voluptatum! A aliquid beatae consectetur itaque similique! Commodi inventore recusandae reiciendis?</p>
+   <div class="container-fluid  row">
+        <h1 class="align-self-center" style="margin-bottom: 10%">Про нас</h1>
+        <div class=" row">
+            <img class = "col-4" src="{%static 'img/ImageBackGround.png'%}">
+            <p class="col-8">1 член команды</p>
+        </div>
+       <div class="text-end row">
+           <p class="col-8">1 член команды</p>
+            <img class = "col-4" src="{%static 'img/ImageBackGround.png'%}">
+        </div>
+       <div class=" row">
+            <img class = "col-4" src="{%static 'img/ImageBackGround.png'%}">
+            <p class="col-8">1 член команды</p>
+        </div>
+       <div class="text-end row">
+           <p class="col-8">1 член команды</p>
+           <img class = "col-4" src="{%static 'img/ImageBackGround.png'%}">
+        </div>
 
     </div>
 {% endblock %}

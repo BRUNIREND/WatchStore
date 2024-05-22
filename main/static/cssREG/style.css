@@ -5,9 +5,23 @@
     font-family: Montserrat; !important;
 
 }
+.butt{
+    text-decoration: none;
+    color: black;
+}
+#butt{
+    background-color: silver;
+    border: none
+}
 
+#butt:hover{
+    color: white; !important;
+    background-color: black; !important;
+    border: 1px solid white;
+    border-radius: 5px;
+}
 layout.css.headerImg{
-    margin-left: 3%;
+    margin-left: 3%; !important;
 }
 
 header a:hover{
@@ -64,9 +78,12 @@ input[type=text]:focus-within{
 }
 ul#coder{
     display:grid;
+    margin: 0;
+    padding: 0;
 }
 ul#coder li{
-
+    margin: 0;
+    padding: 0;
     width:100px;
     list-style: none;
     position: relative;
@@ -120,6 +137,7 @@ ul#coder ul ul{
     top:0;
     left:100%;
 }
+
 /*ul#coder:hover{*/
 /*    background-color: black;*/
 /*}*/
