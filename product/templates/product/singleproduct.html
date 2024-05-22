@@ -5,16 +5,14 @@
 <div class="container row" style="margin-top: 10%">
     <div class="container col-6">
         <div class="">
-            <img src="{%static 'img/ImageBackGround.jpg'%}" class="card-img">
+            <img src="{{ product.image.url }}" class="card-img">
         </div>
     </div>
 
     <div class="container col-2 d-inline-grid w-25">
-        <h6>Название часов</h6>
-        <label>ЦЕНА</label>
+        <h6>Название часов: {{ product.name }}</h6>
+        <label>ЦЕНА: {{ product.sell_price }}</label>
         <button class="h-50 btn-primary btn border-0 cart-btn text-white" style="font-size: 23px" type="button">Добавить в корзину</button>
-
-
     </div>
 </div>
 <div class="container characteristics w-75" style="margin-top: 5%">

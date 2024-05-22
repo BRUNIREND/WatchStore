@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ProductForm
 from .models import Products
-
+from django.views.generic import DetailView, UpdateView, DeleteView
 def catalog(request):
     goods = Products.objects.all()
 
@@ -11,6 +11,7 @@ def catalog(request):
         "goods": goods,
     }
     return render(request, "product/products.html", context=context)
+
 
 
 
@@ -32,8 +33,12 @@ def create(request):
     }
     return render(request, 'product/adminka_create.html', data)
 
-# def products(request):
-#     context = {
-#         "element": [1] * 9
-#     }
-#     return render(request, "product/products.html", context=context)
+
+def product(request, product_slug):
+
+    product = Products.objects.get(slug=product_slug)
+
+    context = {
+        'product': product
+    }
+    return render(request, "product/singleproduct.html", context=context)

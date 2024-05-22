@@ -3,7 +3,7 @@
 {% block title %}Продукты{% endblock %}
 {% block content %}
 
-    <div ></div>
+
 
     <div class="container">
         <section class="categories row">
@@ -151,7 +151,7 @@
 
             <div class="items col-9 row justify-content-between">
                 {% for product in goods %}
-                    <div class="card col-12" style="width: 19rem; min-height: 30rem; padding:0" onclick="window.location.href = `{% url 'catalog' %}`">
+                    <div class="card col-12" style="width: 19rem; min-height: 30rem; padding:0" onclick="window.location.href = '{% url 'product-detail' product.slug %}'">
                         <div class="cardimg" style="margin-bottom: 2%; min-height: 70%">
                             {% if product.image %}
                                 <img style="object-fit: cover; min-height: 100%" src="{{ product.image.url }}" class="card-img-top cardimGG" alt="Здесб была картинка">
@@ -162,7 +162,13 @@
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="card-text">{{ product.cost }}</p>
+                            {% if product.discount %}
+                                <p class="card-text"><s>{{ product.cost }} Р</s></p>
+                                <p class="card-text"><strong>{{ product.sell_price }} Р </strong></p>
+                                <span class ="badge bg-warning text-dark">Скидка {{ product.discount }} %</span>
+                            {% else %}
+                                <p class="card-text">{{ product.cost }} Р</p>
+                            {% endif %}
                             <a href="#" class="btn btn-primary card-btn ">В корзину</a>
                         </div>
                     </div>
