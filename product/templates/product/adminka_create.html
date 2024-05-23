@@ -2,15 +2,15 @@
 {% load static %}
 {% block title %}Админ панель{% endblock %}
 {% block content %}
-    <div class="features">
+    <div style="align-items: center">
             <h1>Форма по добавлению товара</h1>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+                {% for el in form %}
+                	{{el.name}} : {{ el }}<br>
+                {% endfor %}
 
-                {{ form.name }}<br>
-                {{ form.article }}<br>
-                {{ form.country }}<br>
-                {{ form.waterproof }}<br>
+
                 <span>{{ error }}</span>
                 <button class="btn btn-success" type="submit">Добавить товар</button>
             </form>

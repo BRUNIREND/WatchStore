@@ -3,30 +3,14 @@ from django.forms import ModelForm, TextInput,IntegerField, URLField, CharField,
 
 
 class ProductForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['category'].empty_label = "Категория не выбрана"
     class Meta:
         model = Products
-        fields = {'name', 'cost', 'slug', 'discount', 'quantity', 'image', 'category', 'url_path', 'url_img', 'article', 'gender', 'country', 'waterproof', 'type_mechanism'}
+        fields = {'name', 'cost', 'slug', 'discount',    'quantity', 'image',  'url_path', 'url_img', 'article', 'gender', 'country', 'waterproof', 'type_mechanism', 'category'}
 
         widgets = {
-            'name': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название товара'
-            }),
+            'name': TextInput(attrs={'class': 'form-input'}),
 
-            'article': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Артикль'
-            }),
-            'country': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Страна'
-            }),
-            'waterproof': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Водостойкость'
-            }),
-            'type_mechanism': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Тип механизма'
-            })
         }
