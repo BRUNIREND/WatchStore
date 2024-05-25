@@ -9,10 +9,12 @@
         <h1>Удаление статьи</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.title }}<br>
-            {{ form.anons }}<br>
-            {{ form.full_text }}<br>
-            {{ form.date }}<br>
+            <div class="new-feature">
+                    {% for el in form %}
+                        {{el.name}} : {{ el }}<br>
+                    {% endfor %}
+                    <span>{{ error }}</span>
+            </div>
 
             <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Удалить статью</button>

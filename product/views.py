@@ -1,18 +1,34 @@
-from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+from django.shortcuts import render, redirect, get_list_or_404
 from django.http import HttpResponse
 from .forms import ProductForm
 from .models import Products
 from django.views.generic import DetailView, UpdateView, DeleteView
-def catalog(request):
-    goods = Products.objects.all()
 
+
+def catalog(request,category_slug="all", page=1):
+    if category_slug == "all":
+        goods = Products.objects.all()
+    else:
+        goods = get_list_or_404(Products.objects.filter(category__slug=category_slug))
+
+    paginator = Paginator(goods, 3)
+
+    current_page = paginator.page(page)
     context = {
         "title": "Home - Каталог",
-        "goods": goods,
+        "goods": current_page,
+        "slug_url": category_slug
     }
     return render(request, "product/products.html", context=context)
 
 
+def ProductDelete(request, product_slug):
+
+    if request.GET:
+        model = Products.objects.filter(slug=product_slug).delete()
+
+        return redirect('home')
 
 
 def create(request):

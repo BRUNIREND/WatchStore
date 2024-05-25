@@ -3,8 +3,6 @@
 {% block title %}Продукты{% endblock %}
 {% block content %}
 
-
-
     <div class="container">
         <section class="categories row">
             <div class="menu filter col-3 align-items-center" style="text-align: center">
@@ -170,6 +168,8 @@
                                 <p class="card-text">{{ product.cost }} Р</p>
                             {% endif %}
                             <a href="#" class="btn btn-primary card-btn ">В корзину</a>
+                        <a href="{% url 'product-delete' product.slug %}" class="btn btn-danger">Удалить</a>
+{#                        <a href="{% url 'product-update' product.slug %}" class="btn btn-info">Редактировать</a>#}
                         </div>
                     </div>
                 {% endfor %}
@@ -177,4 +177,35 @@
         </section>
 
     </div>
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center my-4">
+        <div class="custom-shadow d-flex">
+            <li class="page-item {% if not goods.has_previous %}disabled{% endif %}">
+                <a class="page-link" href=" {% if goods.has_previous %}
+                {% url "catalog" slug_url goods.previous_page_number %}
+                {% else %}
+                #
+                {% endif %}">Назад</a>
+            </li>
+            
+            {% for page in goods.paginator.page_range %}
+                <li class="page-item {% if goods.number == page %}active{% endif %}">
+                    <a class="page-link" href="{% url "catalog" slug_url page %}">{{ page }}</a>
+                </li>
+            {% endfor %}
+            
+
+            <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
+                <a class="page-link" href=" {% if goods.has_next %}
+                {% url "catalog" slug_url goods.next_page_number %}
+                {% else %}
+                #
+                {% endif %}">Следующая</a>
+            </li>
+        </div>
+    </ul>
+
+</nav>
 {% endblock %}

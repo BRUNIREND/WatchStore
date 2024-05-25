@@ -6,12 +6,13 @@
             <h1>Форма по добавлению товара</h1>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% for el in form %}
-                	{{el.name}} : {{ el }}<br>
-                {% endfor %}
+                <div class="new-feature">
+                    {% for el in form %}
+                        {{el.name}} : {{ el }}<br>
+                    {% endfor %}
+                    <span>{{ error }}</span>
+                </div>
 
-
-                <span>{{ error }}</span>
                 <button class="btn btn-success" type="submit">Добавить товар</button>
             </form>
     </div>
