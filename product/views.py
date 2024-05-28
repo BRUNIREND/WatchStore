@@ -8,7 +8,7 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 from .utils import q_search
 
 
-def catalog(request,category_slug=None):
+def catalog(request,category_slug='all'):
     page = request.GET.get('page', 1)
     type_gender = request.GET.get('type_gender', None)
     type_mechanism = request.GET.get('type_mechanism', None)
