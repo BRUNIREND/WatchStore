@@ -1,9 +1,14 @@
 {% extends 'product/layout.html' %}
 {% load static %}
+{% load goods_tags %}
 {% block title %}Продукты{% endblock %}
 {% block content %}
 
+    <form action="{% if request.GET.q %}{% url "search" %}{% else %}{% url "catalog" slug_url %}{% endif %}" method="get">
     <div class="container">
+        {% if request.GET.q %}
+            <input type="hidden" name="q" value="{{ request.GET.q }}">
+        {% endif %}
         <section class="categories row">
             <div class="menu filter col-3 align-items-center" style="text-align: center">
                 <h3 class="d-flex align-items-center">Фильтры</h3>
@@ -30,11 +35,11 @@
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                       <div class="accordion-body d-block">
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label>Мужской</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
-                          <label>Женский</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_gender" value="Мужские" {% if request.GET.type_gender == 'Мужские' %}checked{% endif %}>
+                          <label>Мужские</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_gender" value="Женские" {% if request.GET.type_gender == 'Женский' %}checked{% endif %}>
+                          <label>Женские</label><br>
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_gender">
                           <label class="col-md-2">Унисекс</label><br>
                       </div>
                     </div>
@@ -61,11 +66,11 @@
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
                       <div class="accordion-body">
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_mechanism">
                           <label>Механические</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_mechanism">
                           <label>Кварцевые</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_mechanism">
                           <label>Электронные</label><br>   </div>
                     </div>
                   </div>
@@ -92,13 +97,13 @@
                         Цвет корпуса
                       </button>
                     </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" >
                       <div class="accordion-body">
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_color">
                           <label>Серебристый</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_color">
                           <label>Золотой</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_color">
                           <label>Черный</label><br>                     </div>
                     </div>
                   </div>
@@ -111,9 +116,9 @@
                     </h2>
                     <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven">
                       <div class="accordion-body">
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_class">
                           <label>Спортивные</label><br>
-                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12">
+                          <input type="checkbox" style="max-width: 15px" class="col-md-4 col-lg-4 col-xxl-12" name="type_class">
                           <label>Классические</label><br>
                       </div>
                     </div>
@@ -143,10 +148,7 @@
                 <button type="reset" class="col-12" style="border: none; background-color: white">
                     <u>Сбросить</u>
                 </button>
-
             </div>
-
-
             <div class="items col-9 row justify-content-between">
                 {% for product in goods %}
                     <div class="card col-12" style="width: 19rem; min-height: 30rem; padding:0" onclick="window.location.href = '{% url 'product-detail' product.slug %}'">
@@ -168,38 +170,40 @@
                                 <p class="card-text">{{ product.cost }} Р</p>
                             {% endif %}
                             <a href="#" class="btn btn-primary card-btn ">В корзину</a>
-                        <a href="{% url 'product-delete' product.slug %}" class="btn btn-danger">Удалить</a>
-{#                        <a href="{% url 'product-update' product.slug %}" class="btn btn-info">Редактировать</a>#}
+                            <a href="{% url 'product-delete' product.slug %}" class="btn btn-danger">Удалить</a>
+                            {#<a href="{% url 'product-update' product.slug %}" class="btn btn-info">Редактировать</a>#}
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </section>
-
     </div>
+</form>
 
 
-<nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center my-4">
         <div class="custom-shadow d-flex">
             <li class="page-item {% if not goods.has_previous %}disabled{% endif %}">
                 <a class="page-link" href=" {% if goods.has_previous %}
-                {% url "catalog" slug_url goods.previous_page_number %}
+                ?{% change_params page=goods.previous_page_number %}
                 {% else %}
                 #
                 {% endif %}">Назад</a>
             </li>
             
             {% for page in goods.paginator.page_range %}
+                {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
                 <li class="page-item {% if goods.number == page %}active{% endif %}">
-                    <a class="page-link" href="{% url "catalog" slug_url page %}">{{ page }}</a>
+                    <a class="page-link" href="?{% change_params page=page %}">{{ page }}</a>
                 </li>
+                {% endif %}
             {% endfor %}
             
 
             <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
                 <a class="page-link" href=" {% if goods.has_next %}
-                {% url "catalog" slug_url goods.next_page_number %}
+                ?{% change_params page=goods.next_page_number %}
                 {% else %}
                 #
                 {% endif %}">Следующая</a>

@@ -5,16 +5,26 @@ from .forms import ProductForm
 from .models import Products
 from django.views.generic import DetailView, UpdateView, DeleteView
 
+from .utils import q_search
 
-def catalog(request,category_slug="all", page=1):
+
+def catalog(request,category_slug=None):
+    page = request.GET.get('page', 1)
+    type_gender = request.GET.get('type_gender', None)
+    type_mechanism = request.GET.get('type_mechanism', None)
+    query = request.GET.get('q', None)
     if category_slug == "all":
         goods = Products.objects.all()
+    elif query:
+        goods = q_search(query)
     else:
         goods = get_list_or_404(Products.objects.filter(category__slug=category_slug))
 
+    if type_gender:
+        goods = goods.filter(gender=type_gender)
     paginator = Paginator(goods, 3)
 
-    current_page = paginator.page(page)
+    current_page = paginator.page(int(page))
     context = {
         "title": "Home - Каталог",
         "goods": current_page,
