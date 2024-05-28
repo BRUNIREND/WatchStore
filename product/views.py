@@ -68,3 +68,7 @@ def product(request, product_slug):
         'product': product
     }
     return render(request, "product/singleproduct.html", context=context)
+
+def cart(request):
+
+    return render(request, "product/Cart.html")

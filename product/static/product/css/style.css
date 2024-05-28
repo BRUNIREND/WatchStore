@@ -111,6 +111,12 @@ input[type=text]:focus-within{
 .cart-btn p:hover{
     color:white;
 }
+.left-card{
+    justify-content: center;
+    border-width: 10px;
+    border-color: black;
+    height: 100rem;
+}
 
 ul#coder{
     display:grid; !important;
