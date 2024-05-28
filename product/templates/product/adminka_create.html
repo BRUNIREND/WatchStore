@@ -4,7 +4,9 @@
 {% block content %}
     <div style="align-items: center">
             <h1>Форма по добавлению товара</h1>
+
             <form method="post" enctype="multipart/form-data">
+
                 {% csrf_token %}
                 <div class="new-feature">
                     {% for el in form %}
