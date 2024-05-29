@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 urlpatterns = [
-    path('', views.create, name='sign_up'),
-    path('authorization', views.sign_in, name='sign_in'),
+    path('login/', views.login, name='login'),
+    path('registration/', views.registration, name='registration'),
+    path('profile/', views.profile, name='profile'),
+    path('logout/', views.logout, name='logout'),
 ]

@@ -34,7 +34,7 @@
             </form>
 
            <div class="headerImg ">
-               <a href="{% url 'sign_in' %}" class="bg-light">
+               <a href="{% url 'login' %}" class="bg-light">
                    <ul class="coder" id="coder" style="margin:0;padding:0;margin-left: 5px;">
                        <li>
                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,9 +49,9 @@
                             </defs>
                            </svg>
                            <ul>
-                               <li class="aaa"><a href="">Профиль</a></li>
-                               <li class="aaa"><a href="">Админка</a></li>
-                               <li class="aaa"><a href="">Выход</a></li>
+                               <li class="aaa"><a href="{% url 'profile' %}">Профиль</a></li>
+                               <li class="aaa"><a href="{% url 'create' %}">Админка</a></li>
+                               <li class="aaa"><a href="{% url 'logout' %}">Выход</a></li>
                            </ul>
                        </li>
                    </ul>

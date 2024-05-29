@@ -1,0 +1,87 @@
+{% extends 'registration/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content  %}
+    <div class="container col-sm-12 col-lg-9 col-xl-7 col-xxl-6 divReg">
+        <form class="col-12 w-auto registerForm" style="margin-right: 1%" method="post">
+            {% csrf_token %}
+            <h1 class="position-relative" style="padding-bottom: 5%">Добро пожаловать!</h1>
+            <div class = 'features'>
+                <div class="col-md-6 mb-3">
+                    <label for="id_first_name" class="form-label">Имя*</label>
+                    <input type="text" class="form-control" id="id_first_name"
+                    value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
+                    name="first_name"
+                    placeholder="Введите ваше имя" required>
+                {% if form.first_name.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                        <label for="id_last_name" class="form-label">Фамилия*</label>
+                        <input type="text" class="form-control" id="id_last_name"
+                        value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
+                        name="last_name"
+                        placeholder="Введите вашу фамилию" required>
+                {% if form.last_name.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                                <label for="id_username" class="form-label">Имя пользователя*</label>
+                                <input type="text" class="form-control" id="id_username"
+                                value="{% if form.username.value %}{{ form.username.value }}{% endif %}"
+                                name="username"
+                                placeholder="Введите ваше имя пользователя" required>
+                {% if form.username.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                            <label for="id_email" class="form-label">Email*</label>
+                            <input type="email" class="form-control" id="id_email"
+                            value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
+                            name="email"
+                            placeholder="Введите ваш email" required>
+                {% if form.email.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                                <label for="id_password1" class="form-label">Пароль*</label>
+                                <input type="password" class="form-control" id="id_password1"
+                                value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}"
+                                name="password1"
+                                placeholder="Введите пароль" required>
+                {% if form.password1.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class="col-md-6 mb-3">
+                                <label for="id_password2" class="form-label">Подтверждение пароля*</label>
+                                <input type="password" class="form-control" id="id_password2"
+                                value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}"
+                                name="password2"
+                                placeholder="Подтвердите пароль" required>
+                {% if form.password2.errors %}
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                {% endif %}
+                </div>
+            </div>
+            <div class="container" style="text-align: center; display: grid">
+                <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
+                 border: none">
+                    Регистрация
+                </button>
+                <label>Уже зарегистрированы?</label>
+                <a class="bg-light" href="{% url 'login' %}">Войти</a>
+            </div>
+        </form>
+        <div class="col-lg-1  col-md-6 MDLGimg" style="margin: 0 0 5% 5%; width: 429px;
+                height: 500px; 
+                background: url('{% static 'registration/img/watchIMG.jpg' %}') center;">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'registration/layout.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container col-sm-12 col-md-12 col-lg-6 divReg">
+        <form class=" w-auto registerForm" style="margin-right: 1%; margin-top: 10%" method="post">
+            {% csrf_token %}
+{#            {% include "includes/notifications.html"  %}#}
+
+            <h1 class="position-relative " style="padding-bottom: 5%">Добро пожаловать!</h1>
+            {% if form.non_field_errors %}
+                <p>{{ form.non_field_errors }}</p>
+            {% endif %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Имя пользователя</label>
+                <input type="text" id="id_username" class="form-control" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" placeholder="Введите ваше имя пользователя" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Пароль</label>
+                <input type="password" id="id_password" class="form-control"  placeholder="Введите ваше имя пользователя" name="password" required>
+            </div>
+            {#            {% for item in form %}#}
+{#                <div class="mb-3">#}
+{#                    <label for="{{ item.id_for_label }}" class="form-label">{{ item.label }}</label>#}
+{#                    {{ item }}#}
+{#                </div>#}
+{#            {% endfor %}#}
+
+
+            {#            {{ form.email }}<br>#}
+{#            {{ form.password }}<br>#}
+            <div class="container" style="text-align: center; display: grid">
+                <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
+                 border: none">Войти</button>
+                <label>У вас нет аккаунта?</label>
+                <a class="bg-light" href="{% url 'registration' %}">Зарегистрироваться</a>
+            </div>
+
+        </form>
+       <div class="col-md-6 MDLGimg" style="padding-left:10%; margin: 0 0 5% 5%;
+        background-position: center; width: 429px; height: 480px; 
+        background-image: url('{% static 'registration/img/watchIMG.jpg' %}')">
+        </div>
+    </div>
+{% endblock %}
+
+
