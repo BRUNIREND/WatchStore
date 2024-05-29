@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.contrib import messages
 # from .models import RegisteredUsers
-from .forms import UserLoginForm, UserRegistrationForm
+from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 import re
 
@@ -59,6 +61,7 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+
 def login(request):
     if request.method == "POST":
         form = UserLoginForm(data=request.POST)
@@ -68,6 +71,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user:
                 auth.login(request, user)
+                messages.success(request, f"{username}, Вы вошли в акаунт")
                 return HttpResponseRedirect(reverse('home'))
     else:
         form = UserLoginForm()
@@ -84,7 +88,10 @@ def registration(request):
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('login'))
+            user = form.instance
+            auth.login(request, user=user)
+            messages.success(request, f"{user.username}, Вы успешно зарегистрированы и вошли в аккаунт")
+            return HttpResponseRedirect(reverse('home'))
     else:
         form = UserRegistrationForm()
     context = {
@@ -93,16 +100,25 @@ def registration(request):
     }
     return render(request, 'registration/registration.html', context)
 
-
+@login_required
 def profile(request):
+    if request.method == "POST":
+        form = ProfileForm(data=request.POST, instance=request.user, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Профиль успешно обновлен")
+            return HttpResponseRedirect(reverse('profile'))
+    else:
+        form = ProfileForm(instance=request.user)
     context = {
-        'title': 'WStore - Авторизация'
+        'title': 'WStore - Профиль',
+        'form': form
     }
     return render(request, 'registration/profile.html', context)
 
 
+@login_required
 def logout(request):
-    context = {
-        'title': 'WStore - Авторизация'
-    }
-    return render(request, '', context)
+    messages.success(request, f"{request.user.username}, Вы успешно вышли из аккаунта")
+    auth.logout(request)
+    return redirect(reverse('home'))

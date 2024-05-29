@@ -5,7 +5,7 @@
 
 {% block content  %}
     <div class="container col-sm-12 col-lg-9 col-xl-7 col-xxl-6 divReg">
-        <form class="col-12 w-auto registerForm" style="margin-right: 1%" method="post">
+        <form class="col-12 w-auto registerForm" style="margin-right: 1%" method="post" action="{% url "registration" %}">
             {% csrf_token %}
             <h1 class="position-relative" style="padding-bottom: 5%">Добро пожаловать!</h1>
             <div class = 'features'>
@@ -26,7 +26,7 @@
                         name="last_name"
                         placeholder="Введите вашу фамилию" required>
                 {% if form.last_name.errors %}
-                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.last_name.errors }}</div>
                 {% endif %}
                 </div>
                 <div class="col-md-6 mb-3">
@@ -36,7 +36,7 @@
                                 name="username"
                                 placeholder="Введите ваше имя пользователя" required>
                 {% if form.username.errors %}
-                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.username.errors }}</div>
                 {% endif %}
                 </div>
                 <div class="col-md-6 mb-3">
@@ -46,7 +46,7 @@
                             name="email"
                             placeholder="Введите ваш email" required>
                 {% if form.email.errors %}
-                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.email.errors }}</div>
                 {% endif %}
                 </div>
                 <div class="col-md-6 mb-3">
@@ -56,7 +56,7 @@
                                 name="password1"
                                 placeholder="Введите пароль" required>
                 {% if form.password1.errors %}
-                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.password1.errors }}</div>
                 {% endif %}
                 </div>
                 <div class="col-md-6 mb-3">
@@ -66,7 +66,7 @@
                                 name="password2"
                                 placeholder="Подтвердите пароль" required>
                 {% if form.password2.errors %}
-                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                	<div class="alert alert-danger alert alert-dismissible fade show">{{ form.password1.errors }}</div>
                 {% endif %}
                 </div>
             </div>

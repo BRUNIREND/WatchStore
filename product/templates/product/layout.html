@@ -17,8 +17,8 @@
 <header class="mb-0 w-100" style="">
     <nav  class="navbar navbar-expand-lg  bg-light">
         <div class="container-fluid shadow p-3 mb-1 bg-white rounded">
-            <div style="font-size: xx-large; font-family: Montserrat">
-                WStore
+            <div >
+                <a href="{% url 'home' %}" class="navbar-brand col-sm-4 bg-light">WStore</a>
             </div>
             <div class="container start-50 col-sm-12 col-md-6  ">
                 <ul class="navbar-nav nav-pills nav-fill row justify-content-around">
@@ -34,7 +34,7 @@
             </form>
 
            <div class="headerImg ">
-               <a href="{% url 'login' %}" class="bg-light">
+               <a href="{% if user.is_authenticated %}{% url 'profile' %}{% else %}{% url 'login' %}{% endif %}" class="bg-light">
                    <ul class="coder" id="coder" style="margin:0;padding:0;margin-left: 5px;">
                        <li>
                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,11 +48,15 @@
                             </clipPath>
                             </defs>
                            </svg>
-                           <ul>
-                               <li class="aaa"><a href="{% url 'profile' %}">Профиль</a></li>
-                               <li class="aaa"><a href="{% url 'create' %}">Админка</a></li>
-                               <li class="aaa"><a href="{% url 'logout' %}">Выход</a></li>
-                           </ul>
+                           {% if user.is_authenticated %}
+                               <ul>
+                                   <li class="aaa"><a href="{% url 'profile' %}">Профиль</a></li>
+                                   {% if user.is_admin or user.is_staff %}
+                                    <li class="aaa"><a href="{% url 'create' %}">Админка</a></li>
+                                   {% endif %}
+                                   <li class="aaa"><a href="{% url 'logout' %}">Выход</a></li>
+                               </ul>
+                           {% endif %}
                        </li>
                    </ul>
                </a>

@@ -1,11 +1,14 @@
 from .models import User
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, CharField, PasswordInput
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, CharField, PasswordInput, ImageField
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm
+
 
 class UserLoginForm(AuthenticationForm):
     username = CharField()
     password = CharField()
+
     # username = CharField(label='Имя',
     #     widget=TextInput(attrs={"autofocus": True,
     #                             'class': 'form-control',
@@ -20,17 +23,20 @@ class UserLoginForm(AuthenticationForm):
     class Meta:
         model = User
 
+
 class UserRegistrationForm(UserCreationForm):
-    model = User
-    fields = {
-        "first_name",
-        "last_name",
-        "username",
-        "email",
-        "password1",
-        "password2",
-    }
-    first_name = CharField()
+    class Meta:
+        model = User
+        fields = {
+            "first_name",
+            "last_name",
+            "username",
+            "email",
+            "password1",
+            "password2",
+        }
+
+    first_name = CharField(required=False)
     last_name = CharField()
     username = CharField()
     email = CharField()
@@ -38,6 +44,22 @@ class UserRegistrationForm(UserCreationForm):
     password2 = CharField()
 
 
+class ProfileForm(UserChangeForm):
+    class Meta:
+        model = User
+        fields = (
+            "image",
+            "first_name",
+            "last_name",
+            "username",
+            "email",
+        )
+
+    image = ImageField()
+    first_name = CharField()
+    last_name = CharField()
+    username = CharField()
+    email = CharField()
 # class RegistrationForm(ModelForm):
 #     """
 #     Переопределенная форма регистрации пользователя
@@ -70,11 +92,11 @@ class UserRegistrationForm(UserCreationForm):
 #                 'placeholder': 'Повторите пароль'
 #             }),
 #         }
-    # def clean_email(self):
-    #     """
-    #     проверка email на уникальность
-    #     """
-    #     email = self.cleaned_data.get('email')
-    #     if email and RegisteredUsers.objects.filter(email=email).exists():
-    #         raise
-    #     return email
+# def clean_email(self):
+#     """
+#     проверка email на уникальность
+#     """
+#     email = self.cleaned_data.get('email')
+#     if email and RegisteredUsers.objects.filter(email=email).exists():
+#         raise
+#     return email

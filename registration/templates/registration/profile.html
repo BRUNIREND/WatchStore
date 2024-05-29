@@ -15,33 +15,64 @@
     <div class="col-8">
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                <h1>Профиль</h1>
-                <h3>Обо мне</h3>
-                <div class="surname">
-                    <p>Фамилия</p>
-                    <input type="text" name="" id="surname">
-                </div>
-                <div class="name">
-                    <p>Имя</p>
-                    <input type="text" name="" id="name">
-                </div>
-                <div class="fathername">
-                    <p>Отчество</p>
-                    <input type="text" name="" id="fathername">
-                </div>
-                <div class="sex">
-                    <p>Пол</p>
-                    <input type="button" value="Мужской" id="msex">
-                    <input type="button" value="Женский" id="wsex">
-                </div>
-                <div class="phone">
-                    <p>Мобильный телефон </p>
-                    <input type="text" name="" id="phone">
-                </div>
-                <div class="birthday">
-                    <p>День рождения</p>
-                    <input type="date" name="" id="birthday">
-                </div>
+                <h1 class="text-center mb-4">Профиль пользователя</h1>
+                <h3 class="text-center mb-4">Обо мне</h3>
+                <form action="{% url "profile" %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-md-12 mb-3 text-center">
+                    {% if user.image %}
+                            <img src="{{ user.image.url }}" alt="Фото пользователя" style="max-width: 150px;">
+                    {% else %}
+                            <img src="{% static 'registration/img/watchIMG.jpg' %}" alt="Фото пользователя" style="max-width: 150px;">
+                    {% endif %}
+                    <input type="file" class="form-control mt-3" id="id_image" name="image" accept="image/*">
+                    {% if form.image.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.image.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_firstName" class="form-label">Имя*</label>
+                        <input type="text" class="form-control" name="first_name" id="id_firstName"
+                               placeholder="Введите ваше имя"
+                               value="{{ form.first_name.value }}"
+                               required>
+                        {% if form.first_name.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_last_name" class="form-label">Фамилия*</label>
+                        <input type="text" class="form-control" name="last_name" id="id_last_name"
+                               placeholder="Введите вашу фамилию"
+                               value="{{ form.last_name.value }}"
+                               required>
+                        {% if form.last_name.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_username" class="form-label">Имя пользователя*</label>
+                        <input type="text" class="form-control" name="username" id="id_username"
+                               placeholder="Введите имя пользователя"
+                               value="{{ form.username.value }}"
+                               required>
+                        {% if form.username.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_email" class="form-label">Email*</label>
+                        <input type="text" class="form-control" name="email" id="id_email"
+                               placeholder="Введите Email"
+                               value="{{ form.email.value }}"
+                               required>
+                        {% if form.email.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
+                 border: none"> Сохранить </button>
+                </form>
             </div>
             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
