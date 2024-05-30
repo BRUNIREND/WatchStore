@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'main',
     'news',
     'registration',
-    'product'
+    'product',
+    'carts',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,8 @@ TEMPLATES = [
                  BASE_DIR / 'news/templates',
                  BASE_DIR / 'product/templates',
                  BASE_DIR / 'registration/templates',
-                 BASE_DIR / 'templates']
+                 BASE_DIR / 'templates',
+                 BASE_DIR / 'carts/templates',]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -152,4 +154,4 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'registration.User'
-LOGIN_URL = '/registration/login'
+LOGIN_URL = '/registration/login/'

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="{% static 'product/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'product/css/layout.css' %}">
     <script src="{% static 'registration/js/bootstrap.js' %}"></script>
+<script type="text/plain" src="{% static "js/jquery/jquery-3.7.0.min.js" %}"></script>
+    <script type="text/plain" src="{% static "js/jquery-ajax.js" %}"></script>
+    <script type="text/plain" src="{% static "js/jquery-events.js" %}"></script>
+    <script type="text/plain" src="{% static "js/bootstrap/bootstrap.bundle.min.js" %}"></script>
 
 </head>
 <body>
@@ -94,6 +98,8 @@
 </header>
 
 <main style="align-items: center">
+    {% include "includes/notifications.html"  %}
+
     {% block content %}
     {% endblock %}
 </main>

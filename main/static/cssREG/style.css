@@ -138,6 +138,17 @@ ul#coder ul ul{
     left:100%;
 }
 
+.btn-check {
+
+}
+
+.btn-check:checked {
+    background-color: white; !important;
+    border: solid 3px; !important;
+    border-color: black; !important;
+    text-underline: black; !important;
+}
+
 /*ul#coder:hover{*/
 /*    background-color: black;*/
 /*}*/
