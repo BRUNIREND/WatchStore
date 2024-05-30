@@ -74,9 +74,102 @@
                  border: none"> Сохранить </button>
                 </form>
             </div>
-            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+            <div class="tab-pane fade" id="list-address" role="tabpanel" aria-labelledby="list-address-list">
+                <h1 class="text-center mb-4">Адреса доставки</h1>
+                <h3 class="text-center mb-4">Добавление адреса</h3>
+                <form action="{% url "profile" %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-md-12 mb-3">
+                        <label for="id_city" class="form-label">Город</label>
+                        <input type="text" class="form-control" name="city" id="id_city"
+                               placeholder="Введите город проживания"
+                               value="{{ form.city.value }}"
+                               required>
+                        {% if form.city.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.city.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_street" class="form-label">Улица</label>
+                        <input type="text" class="form-control" name="street" id="id_street"
+                               placeholder="Введите название улицы"
+                               value="{{ form.street.value }}"
+                               required>
+                        {% if form.street.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.street.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_building" class="form-label">Дом</label>
+                        <input type="text" class="form-control" name="building" id="id_building"
+                               placeholder="Введите номер дома"
+                               value="{{ form.building.value }}"
+                               required>
+                        {% if form.building.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.building.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="id_entrance" class="form-label">Корпус</label>
+                        <input type="text" class="form-control" name="entrance" id="id_entrance"
+                               placeholder="Введите номер корпуса"
+                               value="{{ form.entrance.value }}"
+                               required>
+                        {% if form.entrance.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.entrance.errors }}</div>
+                        {% endif %}
+                    </div>
+                <div class="col-md-12 mb-3">
+                        <label for="id_apartment" class="form-label">Квартира</label>
+                        <input type="text" class="form-control" name="apartment" id="id_apartment"
+                               placeholder="Введите номер квартиры"
+                               value="{{ form.apartment.value }}"
+                               required>
+                        {% if form.apartment.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show">{{ form.apartment.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary" style=" background: silver; color:black;
+                 border: none"> Сохранить </button>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="list-orders" role="tabpanel" aria-labelledby="list-orders-list">
+                <h1 class="text-center mb-4">Мои заказы</h1>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Дата</th>
+                            <th scope="col">Изображение</th>
+                            <th scope="col">Наименование</th>
+                            <th scope="col">Доставка</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>20.05.2024</td>
+                            <td><img src="{{ product.image.url }}" class="card-img"></td>
+                            <td>{{ product.name }}</td>
+                            <td>Бесплатно</td>
+                            <td>1 шт.</td>
+                            <td>{{ product.sell_price }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>20.05.2024</td>
+                            <td><img src="{{ product.image.url }}" class="card-img"></td>
+                            <td>{{ product.name }}</td>
+                            <td>Бесплатно</td>
+                            <td>1 шт.</td>
+                            <td>{{ product.sell_price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="list-favorite" role="tabpanel" aria-labelledby="list-favorite-list">...</div>
         </div>
     </div>
 </div>
