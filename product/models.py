@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Categories(models.Model):
@@ -35,11 +36,15 @@ class Products(models.Model):
     #     return f'/news/{self.id}'
     # def display_id(self):
     #     return f"{self.id:05}"
+
+    def get_absolute_url(self):
+        return reverse('product', kwargs={'product_slug': self.slug})
     def sell_price(self):
         if self.discount:
             return round(self.cost - self.cost * self.discount/100, 2)
         return self.cost
     class Meta:
+        db_table = 'product'
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
-
+        # ordering = ['-quantity']

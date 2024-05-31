@@ -1,11 +1,16 @@
 {% extends 'registration/layout.html' %}
 {% load static %}
 {% block title %}{{ title }}{% endblock %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock %}
+
 {% block content %}
     <div class="container col-sm-12 col-md-12 col-lg-6 divReg">
         <form class=" w-auto registerForm" style="margin-right: 1%; margin-top: 10%" method="post">
             {% csrf_token %}
-            {% include "includes/notifications.html"  %}
+{#            {% include "includes/notifications.html"  %}#}
             {% if request.GET.next %}
                 <input type="hidden" name="next" value="{{ request.GET.next }}">
             {% endif %}

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import mimetypes
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'registration',
     'product',
     'carts',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +74,8 @@ TEMPLATES = [
                  BASE_DIR / 'product/templates',
                  BASE_DIR / 'registration/templates',
                  BASE_DIR / 'templates',
-                 BASE_DIR / 'carts/templates',]
+                 BASE_DIR / 'carts/templates',
+                 BASE_DIR / 'orders/templates',]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -140,6 +143,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "main/static"),
     os.path.join(BASE_DIR, "registration/static"),
     os.path.join(BASE_DIR, "product/static"),
+    os.path.join(BASE_DIR, "carts/static"),
+    os.path.join(BASE_DIR, "static"),
+
 
 ]
 MEDIA_URL = 'media/'

@@ -12,7 +12,7 @@
     <div class="container col-2 d-inline-grid w-25">
         <h6>Название часов: {{ product.name }}</h6>
         <label>ЦЕНА: {{ product.sell_price }}</label>
-        <button class="h-50 btn-primary btn border-0 cart-btn text-white" style="font-size: 23px" type="button">Добавить в корзину</button>
+        <button class="h-50 btn-primary btn border-0 cart-btn text-white add_to_cart" data-product-id="{{ product.id }}" style="font-size: 23px" type="button">{% csrf_token %}Добавить в корзину</button>
     </div>
 </div>
 <div class="container characteristics w-75" style="margin-top: 5%">
