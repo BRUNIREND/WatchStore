@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: Montserrat; !important;
+}
+
+.container ul li{
+    font-size: x-large;
+    font-family: Montserrat; !important;
+
+}
+.butt{
+    text-decoration: none;
+    color: black;
+}
+#butt{
+    background-color: silver;
+    border: none
+}
+
+#butt:hover{
+    color: white; !important;
+    background-color: black; !important;
+    border: 1px solid white;
+    border-radius: 5px;
+}
 layout.css.headerImg{
-    margin-left: 2%;
+    margin-left: 3%; !important;
 }
 
 header a:hover{
@@ -69,7 +95,7 @@ ul#coder li{
 
 }
 ul#coder .aaa:hover{
-    padding-top: 10px;
+    width: 120%;
     background: black;
     transition: all .5s;
     color: white;
@@ -81,7 +107,6 @@ ul#coder .aaa{
 }
 ul#coder a:hover{
     background-color: black;
-
     color: white;
 }
 ul#coder ul a{
@@ -106,12 +131,19 @@ ul#coder li:hover > ul{
     display:block;
     background-color: black;
 }
+
+ul#coder .aaa:hover a{
+    color: white; !important;
+}
+
 ul#coder ul ul{
     display:none;
     top:0;
     left:100%;
 }
+
+
+
 /*ul#coder:hover{*/
 /*    background-color: black;*/
 /*}*/
-

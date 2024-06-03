@@ -3,7 +3,7 @@
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 
-<div class="row">
+<div class="row" style="margin-top: 1%; margin-left: 2%">
     <div class="col-2">
         <div class="list-group" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Профиль</a>
@@ -136,45 +136,9 @@
                  border: none"> Сохранить </button>
                 </form>
             </div>
-            <div class="tab-pane fade" id="list-orders" role="tabpanel" aria-labelledby="list-orders-list">
-                <h1 class="text-center mb-4">Мои заказы</h1>
-                <table class="table table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Дата</th>
-                            <th scope="col">Изображение</th>
-                            <th scope="col">Наименование</th>
-                            <th scope="col">Доставка</th>
-                            <th scope="col">Количество</th>
-                            <th scope="col">Цена</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>20.05.2024</td>
-                            <td><img src="{{ product.image.url }}" class="card-img"></td>
-                            <td>{{ product.name }}</td>
-                            <td>Бесплатно</td>
-                            <td>1 шт.</td>
-                            <td>{{ product.sell_price }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>20.05.2024</td>
-                            <td><img src="{{ product.image.url }}" class="card-img"></td>
-                            <td>{{ product.name }}</td>
-                            <td>Бесплатно</td>
-                            <td>1 шт.</td>
-                            <td>{{ product.sell_price }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
             <div class="tab-pane fade" id="list-carts" role="tabpanel" aria-labelledby="list-carts-list">
              <!-- Корзина -->
-                <div class="col-md-7">
+                <div class="col-md-10">
                     <div class="bg-white p-4 mx-2 rounded custom-shadow">
                         <h3 class="text-center mb-4">Корзина</h3>
                         <div class="container" id="cart-items-container">

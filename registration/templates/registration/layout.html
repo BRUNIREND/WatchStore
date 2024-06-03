@@ -8,16 +8,15 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
-    <link rel="stylesheet" href="{% static 'registration/cssREG/bootstrap-grid.min.css' %}">
-    <link rel="stylesheet" href="{% static 'registration/cssREG/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'registration/cssREG/style.css' %}">
-    <link rel="stylesheet" href="{% static 'registration/cssREG/layout.css' %}">
-    <script src="{% static 'registration/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'registration/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/layout.css' %}">
 
+    <script src="{% static 'registration/js/bootstrap.js' %}"></script>
     <script  src="{% static "ss/js/jquery/jquery-3.7.0.min.js" %}"></script>
     <script  src="{% static "ss/js/jquery-ajax.js" %}"></script>
     <script  src="{% static "ss/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
-
 </head>
 <body>
 
@@ -27,8 +26,7 @@
             <div >
                 <a href="{% url 'home' %}" class="navbar-brand col-sm-4 bg-light">WStore</a>
             </div>
-
-            <div class="container start-50 col-sm-12 col-md-6  ">
+            <div class="container start-50 col-sm-12 col-md-6">
                 <ul class="navbar-nav nav-pills nav-fill row justify-content-around">
                     <li class="nav-item col-lg-2 " ><a href="{% url 'home' %}" class="nav-link" >Home</a></li>
                     <li class="nav-item col-lg-2 " ><a href="{% url 'catalog' %}" class="nav-link" >Shop</a></li>
@@ -36,22 +34,10 @@
                     <li class="nav-item col-lg-2 " ><a href="{% url 'contact' %}" class="nav-link" >Contact</a></li>
                 </ul>
             </div>
-            <div class="headerImg">
-                <a href="#" class="bg-light"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_70_8)">
-                <path d="M29.6337 27.8662L22.1725 20.405C24.2058 17.9182 25.2054 14.7451 24.9648 11.5419C24.7241 8.33876 23.2615 5.35064 20.8795 3.19562C18.4974 1.04061 15.3782 -0.116413 12.167 -0.0361233C8.95584 0.0441664 5.89835 1.35563 3.62699 3.62699C1.35563 5.89835 0.0441664 8.95584 -0.0361233 12.167C-0.116413 15.3782 1.04061 18.4974 3.19562 20.8795C5.35064 23.2615 8.33876 24.7241 11.5419 24.9648C14.7451 25.2054 17.9182 24.2058 20.405 22.1725L27.8662 29.6337C28.102 29.8614 28.4177 29.9874 28.7455 29.9846C29.0732 29.9817 29.3867 29.8503 29.6185 29.6185C29.8503 29.3867 29.9817 29.0732 29.9846 28.7455C29.9874 28.4177 29.8614 28.102 29.6337 27.8662ZM12.5 22.5C10.5222 22.5 8.58876 21.9135 6.94427 20.8147C5.29978 19.7159 4.01805 18.1541 3.26118 16.3268C2.5043 14.4995 2.30627 12.4889 2.69212 10.5491C3.07797 8.60926 4.03038 6.82743 5.4289 5.4289C6.82743 4.03038 8.60926 3.07797 10.5491 2.69212C12.4889 2.30627 14.4995 2.5043 16.3268 3.26118C18.1541 4.01805 19.7159 5.29978 20.8147 6.94427C21.9135 8.58876 22.5 10.5222 22.5 12.5C22.497 15.1512 21.4425 17.693 19.5678 19.5678C17.693 21.4425 15.1512 22.497 12.5 22.5Z" fill="black"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_70_8">
-                <rect width="30" height="30" fill="white"/>
-                </clipPath>
-                </defs>
-                </svg>
-                </a>
-            </div>
+
            <div class="headerImg ">
                <a href="{% if user.is_authenticated %}{% url 'profile' %}{% else %}{% url 'login' %}{% endif %}" class="bg-light">
-                   <ul class="coder" id="coder">
+                   <ul class="coder" id="coder" style="margin:0;padding:0;margin-left: 5px;">
                        <li>
                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_70_3)">
@@ -73,13 +59,12 @@
                                    <li class="aaa"><a href="{% url 'logout' %}">Выход</a></li>
                                </ul>
                            {% endif %}
-
                        </li>
                    </ul>
                </a>
            </div>
              <div class="headerImg">
-                <a href="#" class="bg-light"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="bg-light"><svg style="margin-left: 5px;" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_70_10)">
                 <path d="M21.8749 1.14624C20.4674 1.16813 19.0905 1.56106 17.8834 2.28533C16.6763 3.0096 15.6816 4.03958 14.9999 5.27124C14.3182 4.03958 13.3236 3.0096 12.1165 2.28533C10.9094 1.56106 9.53251 1.16813 8.12495 1.14624C5.88112 1.24373 3.76708 2.22531 2.24468 3.87653C0.722272 5.52775 -0.0847403 7.7144 -5.21364e-05 9.95874C-5.21368e-05 18.4275 13.6949 28.2087 14.2774 28.6237L14.9999 29.135L15.7224 28.6237C16.3049 28.2112 29.9999 18.4275 29.9999 9.95874C30.0846 7.7144 29.2776 5.52775 27.7552 3.87653C26.2328 2.22531 24.1188 1.24373 21.8749 1.14624ZM14.9999 26.0575C10.9337 23.02 2.49995 15.5575 2.49995 9.95874C2.4145 8.37714 2.95791 6.8259 4.01165 5.64336C5.0654 4.46083 6.54399 3.74293 8.12495 3.64624C9.70591 3.74293 11.1845 4.46083 12.2382 5.64336C13.292 6.8259 13.8354 8.37714 13.7499 9.95874H16.2499C16.1645 8.37714 16.7079 6.8259 17.7617 5.64336C18.8154 4.46083 20.294 3.74293 21.8749 3.64624C23.4559 3.74293 24.9345 4.46083 25.9882 5.64336C27.042 6.8259 27.5854 8.37714 27.4999 9.95874C27.4999 15.56 19.0662 23.02 14.9999 26.0575Z" fill="black"/>
                 </g>
@@ -92,8 +77,8 @@
                 </a>
             </div>
 
-             <div class="headerImg" style="padding-left: 3%">
-                <a href="{% url "users-cart" %}" class="bg-light"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <div class="headerImg">
+                <a href="{% url "users-cart" %}" class="bg-light"><svg style="margin-left: 40px;" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_70_6)">
                 <path d="M26.25 7.5H22.5C22.5 5.51088 21.7098 3.60322 20.3033 2.1967C18.8968 0.790176 16.9891 0 15 0C13.0109 0 11.1032 0.790176 9.6967 2.1967C8.29018 3.60322 7.5 5.51088 7.5 7.5H3.75C2.75544 7.5 1.80161 7.89509 1.09835 8.59835C0.395088 9.30161 0 10.2554 0 11.25L0 23.75C0.00198482 25.407 0.661102 26.9956 1.83277 28.1672C3.00445 29.3389 4.59301 29.998 6.25 30H23.75C25.407 29.998 26.9956 29.3389 28.1672 28.1672C29.3389 26.9956 29.998 25.407 30 23.75V11.25C30 10.2554 29.6049 9.30161 28.9017 8.59835C28.1984 7.89509 27.2446 7.5 26.25 7.5ZM15 2.5C16.3261 2.5 17.5979 3.02678 18.5355 3.96447C19.4732 4.90215 20 6.17392 20 7.5H10C10 6.17392 10.5268 4.90215 11.4645 3.96447C12.4021 3.02678 13.6739 2.5 15 2.5ZM27.5 23.75C27.5 24.7446 27.1049 25.6984 26.4017 26.4017C25.6984 27.1049 24.7446 27.5 23.75 27.5H6.25C5.25544 27.5 4.30161 27.1049 3.59835 26.4017C2.89509 25.6984 2.5 24.7446 2.5 23.75V11.25C2.5 10.9185 2.6317 10.6005 2.86612 10.3661C3.10054 10.1317 3.41848 10 3.75 10H7.5V12.5C7.5 12.8315 7.6317 13.1495 7.86612 13.3839C8.10054 13.6183 8.41848 13.75 8.75 13.75C9.08152 13.75 9.39946 13.6183 9.63388 13.3839C9.8683 13.1495 10 12.8315 10 12.5V10H20V12.5C20 12.8315 20.1317 13.1495 20.3661 13.3839C20.6005 13.6183 20.9185 13.75 21.25 13.75C21.5815 13.75 21.8995 13.6183 22.1339 13.3839C22.3683 13.1495 22.5 12.8315 22.5 12.5V10H26.25C26.5815 10 26.8995 10.1317 27.1339 10.3661C27.3683 10.6005 27.5 10.9185 27.5 11.25V23.75Z" fill="black"/>
                 </g>
@@ -104,8 +89,7 @@
                 </defs>
                 </svg>
                 </a>
-                 {{ carts.total_quantity }}
-
+                {{ carts.total_quantity }}
             </div>
         </div>
     </nav>

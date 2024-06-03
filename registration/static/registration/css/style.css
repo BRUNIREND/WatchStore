@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container ul li{
+    font-size: x-large; !important;
+    font-family: Montserrat; !important;
+}
+
+.container ul li button{
+    color: black;
+}
+
+layout.css.headerImg{
+    margin-left: 2%;
+}
+
+header a:hover{
+    background: silver;
+}
+
+.divReg{
+    display: flex;
+}
+
+input[type=text] {
+    margin-bottom: 2%;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    border-bottom: 1px solid gray;
+}
+
+input[type=text]:focus-within{
+    background-color: #9ec5fe;
+    opacity: 66%;
+    border-radius: 2px;
+    border-bottom: 1px solid gray;
+}
+
+.categories .menu h3{
+    border-radius: 5px 5px 0px 0px;
+    height: 50px;
+}
+.categories .menu ul li{
+    margin-bottom: 15px;
+
+}
+.categories .menu ul li:hover{
+    font-weight: 600;
+}
+.categories .menu ul li a{
+    color: black;
+    align-items: center;
+    text-decoration: none;
+}
+.menu .accordion{
+    text-align: left;
+}
+.card-btn{
+    border-radius: 0;
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+.card{
+    margin-bottom: 5%;
+}
+.card:hover{
+    box-shadow: 0 15px 30px -15px rgb(253, 253, 253);
+}
+ul#coder{
+    display:grid; !important;
+}
+
+ul#coder li{
+    width:100px; !important;
+    list-style: none; !important;
+    position: relative; !important;
+    text-align: center; !important;
+
+}
+
+ul#coder .aaa:hover{
+    width: 120%;
+    background: black; !important;
+    transition: all .5s; !important;
+    color: white; !important;
+
+}
+
+ul#coder .aaa{
+    background: #FDFDFDFF; !important;
+    box-shadow: -5px 3px 10px grey; !important;
+}
+
+ul#coder a:hover{
+    background-color: black; !important;
+    color: white; !important;
+    width: 100%; !important;
+    height: 100%; !important;
+}
+
+ul#coder ul a{
+    color:black; !important;
+    text-decoration: none; !important;
+    text-align: center; !important;
+    width: 100%; !important;
+    height: 100%; !important;
+    line-height: 40px; !important;
+    transition: all .4s; !important;
+}
+
+ul#coder ul{
+    position:absolute; !important;
+    left:0; !important;
+    top:100%; !important;
+    display:none; !important;
+    padding:0; !important;
+}
+
+ul#coder li:hover > ul{
+    display:block; !important;
+    background-color: black; !important;
+}
+
+ul#coder .aaa:hover a{
+    color: white; !important;
+}
+
+ul#coder ul ul{
+    display:none; !important;
+    top:0; !important;
+    left:100%; !important;
+}
+
+.btn-check:checked {
+    background-color: white; !important;
+    border: solid 3px; !important;
+    border-color: black; !important;
+    text-underline: black; !important;
+}
+/*ul#coder:hover{*/
+/*    background-color: black;*/
+/*}*/
+
