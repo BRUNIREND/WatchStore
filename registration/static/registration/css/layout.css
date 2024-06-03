@@ -1,7 +1,18 @@
-@media screen and (max-width: 425px){
+@media screen and (max-width: 768px){
+    .adapt-profile-list{
+        width: 100%;
+        text-align: center;
+    }
+    .adapt-profile{
+
+    }
+}
+
+@media screen and (max-width: 767px){
     .MDLGimg{
         display: none;
     }
+
     .divReg{
         text-align: center;
         display: block;
@@ -10,3 +21,27 @@
         width: 100%;
     }
 }
+@media screen and (min-width: 768px){
+    .forPhone{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .adapt{
+        display: table;
+    }
+    #adapt{
+        display: table;
+    }
+    .forComp{
+        display: none;
+    }
+    .imgs{
+
+    }
+
+}
+
+
+
+

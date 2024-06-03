@@ -13,6 +13,7 @@ layout.css.headerImg{
     margin-left: 2%;
 }
 
+
 header a:hover{
     background: silver;
 }
@@ -20,7 +21,9 @@ header a:hover{
 .divReg{
     display: flex;
 }
-
+.imgs{
+    display: flex;
+}
 input[type=text] {
     margin-bottom: 2%;
     border: none;
