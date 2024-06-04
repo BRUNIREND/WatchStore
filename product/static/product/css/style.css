@@ -55,10 +55,11 @@ input[type=text] {
     border-radius: 2px;
     border-bottom: 1px solid gray;
 }
+.text_in_cart{
+    margin-bottom: 5%;
+}
 
 input[type=text]:focus-within{
-    background-color: #9ec5fe;
-    opacity: 66%;
     border-radius: 2px;
     border-bottom: 1px solid gray;
 }
