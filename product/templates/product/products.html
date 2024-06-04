@@ -169,12 +169,13 @@
                             <h5 class="card-title">{{ product.name }}</h5>
                             {% if product.discount %}
                                 <p class="card-text"><s>{{ product.cost }} Р</s></p>
-                                <p class="card-text"><strong>{{ product.sell_price }} Р </strong></p>
-                                <span class ="badge bg-warning text-dark">Скидка {{ product.discount }} %</span>
+                                <p style="margin-left:25%" class="row card-text text-center col-12 w-50"><strong>{{ product.sell_price }} Р </strong> <span style="margin-top: 10%" class =" card-text badge bg-warning text-dark">Скидка {{ product.discount }} %</span></p>
+
                             {% else %}
                                 <p class="card-text">{{ product.cost }} Р</p>
                             {% endif %}
-                            <a href="{% url "carts:cart_add"  %}" class="btn add_to_cart btn-primary card-btn"
+
+                            <a href="{% url "carts:cart_add"  %}" class="btn add_to_cart  card-btn"
                             data-product-id="{{ product.id }}">{% csrf_token %}
                                 В корзину</a>
 {#                            <a href="{% url 'product-delete' product.slug %}" class="btn btn-danger">Удалить</a>#}

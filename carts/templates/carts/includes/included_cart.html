@@ -3,7 +3,7 @@
 
 {% user_carts request as carts%}
 
-<div class="card mb-3 text-bg-light shadow-lg w-50">
+<div class="card mb-3 text-bg-light shadow-lg w-75 card-adapt">
     {% for cart in carts %}
     <div class="card-header">
         <h5 class="card-title">{{ cart.product.name }}</h5>
@@ -27,9 +27,9 @@
                     </div>
                 </div>
                 <div class="col p-0" style="max-width: 55%; align-items: flex-end; font-size: 16px">
-                    <p style="max-width: 100%; margin: 0">x {{ cart.product.cost }} = <strong>{{ cart.products_price }} Р</strong></p>
+                    <p class="text-adapt-cart" style="white-space: nowrap; max-width: 100%; margin: 0">x {{ cart.product.cost }} = <strong>{{ cart.products_price }} Р</strong></p>
                 </div>
-                <div class="col p-0" style="max-width: 18px;">
+                <div class="col p-0" style="max-width: 18px; margin-left:10%">
                     <a href="{% url 'carts:cart_remove'  %}" class="remove-from-cart" data-cart-id="{{ cart.id }}">
                         {% csrf_token %}
                         <img class="mx-1" src="{% static 'img/trash.png' %}"
